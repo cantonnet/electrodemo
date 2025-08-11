@@ -1,5 +1,6 @@
 package com.cantonnet.electrodemo.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -19,6 +20,7 @@ public class Producto {
     private double precio;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id", nullable = false)
+    @JsonBackReference
     private Categoria categoria;
 
 
