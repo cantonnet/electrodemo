@@ -34,8 +34,8 @@ async function cargarProductos() {
     productos.forEach(p => {
       const li = document.createElement("li");
       // Verificar que categoria existe y tiene nombre antes de acceder
-      const categoriaNombre = p.categoria && p.categoria.nombre ? p.categoria.nombre : 'Sin categoría';
-      li.textContent = `${p.nombre} - $${p.precio} (${categoriaNombre})`;
+      const categoriaNombre = p.categoria && p.categoria.nombre ? p.categoria.nombre : '📦';
+      li.textContent = `${categoriaNombre} ${p.nombre} - $${p.precio}`;
       lista.appendChild(li);
     });
   } catch (error) {
