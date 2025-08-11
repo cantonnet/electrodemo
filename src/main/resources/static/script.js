@@ -1,7 +1,7 @@
-const API_BASE = '/api';
+const API_BASE = '';
 
 async function cargarCategorias() {
-  const res = await fetch(`${API_BASE}/categorias`);
+  const res = await fetch(`${API_BASE}/Categorias`);
   const categorias = await res.json();
   const select = document.getElementById("categoria");
   select.innerHTML = "";
@@ -14,7 +14,7 @@ async function cargarCategorias() {
 }
 
 async function cargarProductos() {
-  const res = await fetch(`${API_BASE}/productos`);
+  const res = await fetch(`${API_BASE}/Productos`);
   const productos = await res.json();
   const lista = document.getElementById("listaProductos");
   lista.innerHTML = "";
@@ -31,7 +31,7 @@ async function crearProducto(e) {
   const precio = parseFloat(document.getElementById("precio").value);
   const categoriaId = parseInt(document.getElementById("categoria").value);
 
-  await fetch(`${API_BASE}/productos`, {
+  await fetch(`${API_BASE}/Productos`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ nombre, precio, categoriaId })
@@ -42,7 +42,7 @@ async function crearProducto(e) {
 }
 
 async function cargarCategoriasLista() {
-  const res = await fetch(`${API_BASE}/categorias`);
+  const res = await fetch(`${API_BASE}/Categorias`);
   const categorias = await res.json();
   const lista = document.getElementById("listaCategorias");
   lista.innerHTML = "";
@@ -57,7 +57,7 @@ async function crearCategoria(e) {
   e.preventDefault();
   const nombre = document.getElementById("nombreCategoria").value;
 
-  await fetch(`${API_BASE}/categorias`, {
+  await fetch(`${API_BASE}/Categorias`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ nombre })
