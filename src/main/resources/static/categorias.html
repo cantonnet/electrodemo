@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Categorías</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Categorías</h1>
+
+  <form id="formCategoria">
+    <input type="text" id="nombreCategoria" placeholder="Nombre de categoría" required>
+    <button type="submit">Crear</button>
+  </form>
+
+  <h2>Lista de categorías</h2>
+  <ul id="listaCategorias"></ul>
+
+  <script src="script.js"></script>
+  <script>
+    cargarCategoriasLista();
+    document.getElementById("formCategoria").addEventListener("submit", crearCategoria);
+  </script>
+</body>
+</html>
